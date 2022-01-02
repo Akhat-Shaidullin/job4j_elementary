@@ -11,38 +11,45 @@ public class Converter {
         return rsl;
     }
 
-    public static float euroToDollar(float value) {
-        float rsl = value * 1.17F;
-        return rsl;
-    }
-
-    public static float dollarToEuro(float value) {
-        float rsl = value * 0.85F;
-        return rsl;
-    }
-
     public static float euroToRuble(float value) {
-        float rsl = value / 0.014285F;
+        float rsl = value * 70;
         return rsl;
     }
 
     public static float dollarToRuble(float value) {
-        float rsl = value / 0.01666F;
+        float rsl = value * 60;
         return rsl;
     }
 
     public static void main(String[] args) {
         float euro = Converter.rubleToEuro(140);
-        float dollar = Converter.rubleToDollar(25);
-        float euroDollar = Converter.euroToDollar(20);
-        float dollarEuro = Converter.dollarToEuro(15);
+        float dollar = Converter.rubleToDollar(120);
         float euroRuble = Converter.euroToRuble(3);
         float dollarRuble = Converter.dollarToRuble(1);
         System.out.println("140 rubles are " + euro + " euro");
-        System.out.println("25 rubles are " + dollar + " dollar");
-        System.out.println("20 euro are " + euroDollar + " dollar");
-        System.out.println("15 dollar are " + dollarEuro + " euro");
+        System.out.println("120 rubles are " + dollar + " dollar");
         System.out.println("3 euro are " + euroRuble + " ruble");
         System.out.println("1 dollar are " + dollarRuble + " ruble");
+
+        float in = 140;
+        float expected = 2;
+        float out = Converter.rubleToEuro(in);
+        boolean passed = expected == out;
+        System.out.println("140 rubles are 2. Test result : " + passed);
+        in = 120;
+        expected = 2;
+        out = Converter.rubleToDollar(in);
+        passed = expected == out;
+        System.out.println("120 rubles are 2. Test result : " + passed);
+        in = 3;
+        expected = 210;
+        out = Converter.euroToRuble(in);
+        passed = expected == out;
+        System.out.println("3 euro are 210. Test result : " + passed);
+        in = 1;
+        expected = 60;
+        out = Converter.dollarToRuble(in);
+        passed = expected == out;
+        System.out.println("1 dollar are 60. Test result : " + passed);
     }
 }
