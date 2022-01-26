@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class FactorialTest {
     @Test
-    public void henCalculateFactorialForFiveThenOneHundredTwenty() {
+    public void whenCalculateFactorialForFiveThenOneHundredTwenty() {
         int first = 1;
         int n = 5;
         int result = Factorial.calc(5);
